@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.9.0 (093c756)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: fake-api
+  name: fake-api
+spec:
+  ports:
+  - name: "8000"
+    port: 8000
+    targetPort: 8080
+  selector:
+    io.kompose.service: fake-api
+status:
+  loadBalancer: {}
